@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='ISO-8859-1'?><TBError>
+  <tipoError>DATO</tipoError>
+  <codigoError>08</codigoError>
+  <mensajeError>Error de parámetro: Parámetro requerido: user / usuario</mensajeError>
+</TBError>

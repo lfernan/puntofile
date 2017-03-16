@@ -1,0 +1,1590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CTGService_v2.0" targetNamespace="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="dummyResponse" type="tns:dummyResponseType">
+			</xsd:element>
+			<xsd:complexType name="dummyResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:dummyReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="dummyReturnType">
+				<xsd:sequence>
+					<xsd:element name="appserver" type="xsd:string"/>
+					<xsd:element name="authserver" type="xsd:string"/>
+					<xsd:element name="dbserver" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="solicitarCTGInicialResponse" type="tns:solicitarCTGInicialResponseType">
+			</xsd:element>
+			<xsd:element name="solicitarCTGInicial" type="tns:solicitarCTGInicialType">
+			</xsd:element>
+			<xsd:element name="solicitarCTGDatoPendienteResponse" type="tns:solicitarCTGDatoPendienteResponseType">
+			</xsd:element>
+			<xsd:element name="solicitarCTGDatoPendiente" type="tns:solicitarCTGDatoPendienteType">
+			</xsd:element>
+			<xsd:element name="anularCTGResponse" type="tns:operacionCTGResponseType">
+			</xsd:element>
+			<xsd:element name="anularCTG" type="tns:anularCTGType"/>
+			<xsd:element name="confirmarArriboResponse" type="tns:operacionCTGResponseType">
+			</xsd:element>
+			<xsd:element name="confirmarArribo" type="tns:confirmarArriboType">
+			</xsd:element>
+			<xsd:element name="desviarCTGAOtroEstablecimientoResponse" type="tns:operacionCTGResponseType">
+			</xsd:element>
+			<xsd:element name="desviarCTGAOtroEstablecimiento" type="tns:desviarCTGAOtroEstablecimientoType">
+			</xsd:element>
+			<xsd:element name="desviarCTGAOtroDestinoResponse" type="tns:operacionCTGResponseType">
+			</xsd:element>
+			<xsd:element name="desviarCTGAOtroDestino" type="tns:desviarCTGAOtroDestinoType">
+			</xsd:element>
+			<xsd:element name="rechazarCTGResponse" type="tns:operacionCTGResponseType">
+			</xsd:element>
+			<xsd:element name="rechazarCTG" type="tns:rechazarCTGType">
+			</xsd:element>
+			<xsd:element name="confirmarDefinitivoResponse" type="tns:confirmarDefinitivoResponseType">
+			</xsd:element>
+			<xsd:element name="confirmarDefinitivo" type="tns:confirmarDefinitivoType">
+			</xsd:element>
+			<xsd:element name="consultarCTGResponse" type="tns:consultarCTGResponseType">
+			</xsd:element>
+			<xsd:element name="consultarCTGRechazadosResponse" type="tns:consultarCTGRechazadosResponseType">
+			</xsd:element>
+			<xsd:element name="consultarCTGRechazados" type="tns:consultarCTGRechazadosType">
+			</xsd:element>
+			<xsd:element name="consultarCTGActivosPorPatenteResponse" type="tns:consultarCTGActivosPorPatenteResponseType">
+			</xsd:element>
+			<xsd:element name="consultarCTGActivosPorPatente" type="tns:consultarCTGActivosPorPatenteType">
+			</xsd:element>
+			<xsd:element name="consultarConstanciaCTGPDFResponse" type="tns:consultarConstanciaCTGPDFResponseType">
+			</xsd:element>
+			<xsd:element name="consultarConstanciaCTGPDF" type="tns:consultarConstanciaCTGPDFType">
+			</xsd:element>
+			<xsd:element name="consultarCosechasResponse" type="tns:consultarCosechasResponseType">
+			</xsd:element>
+			<xsd:element name="consultarCosechas" type="tns:consultarCosechasType">
+			</xsd:element>
+			<xsd:element name="consultarProvinciasResponse" type="tns:consultarProvinciasResponseType">
+			</xsd:element>
+			<xsd:element name="consultarProvincias" type="tns:consultarProvinciasType">
+			</xsd:element>
+			<xsd:element name="consultarLocalidadesPorProvinciaResponse" type="tns:consultarLocalidadesPorProvinciaResponseType">
+			</xsd:element>
+			<xsd:element name="consultarLocalidadesPorProvincia" type="tns:consultarLocalidadesPorProvinciaType">
+			</xsd:element>
+			<xsd:element name="consultarEspeciesResponse" type="tns:consultarEspeciesResponseType">
+			</xsd:element>
+			<xsd:element name="consultarEspecies" type="tns:consultarEspeciesType">
+			</xsd:element>
+			<xsd:complexType name="consultarEstablecimientosType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarEstablecimientosRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="consultarCTG" type="tns:consultarCTGType">
+			</xsd:element>
+			<xsd:complexType name="consultarCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarCTGRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="consultarCTGDatos" type="tns:consultarCTGDatosType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="authType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="token" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="sign" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitRepresentado" type="tns:cuitSimpleType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGDatosType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="patente" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaEmisionDesde" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="fechaEmisionHasta" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitSolicitante" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitDestino" type="tns:cuitSimpleType">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="cuitSimpleType">
+				<xsd:restriction base="xsd:long">
+					<xsd:pattern value="[0-9]{11}"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="consultarDetalleCTGResponse" type="tns:consultarDetalleCTGResponseType">
+			</xsd:element>
+			<xsd:element name="consultarDetalleCTG" type="tns:consultarDetalleCTGType">
+			</xsd:element>
+			<xsd:complexType name="consultarCTGResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarCTGReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="consultarCTGDatos" type="tns:consultarCTGDatosType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayDatosConsultarCTG" type="tns:arrayDatosConsultarCTGType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayDatosConsultarCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="datosConsultarCTG" type="tns:datosConsultarCTGType">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarDetalleCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarDetalleCTGRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarDetalleCTGRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarDetalleCTGResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarDetalleCTGReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarDetalleCTGDatosReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="solicitante" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+
+					<xsd:element maxOccurs="1" minOccurs="1" name="estado" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaEmision" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaVigenciaDesde" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaVigenciaHasta" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitCanjeador" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="canjeadorComoRemitenteComercial" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="especie" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitDestino" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitDestinatario" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="establecimiento" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="localidadOrigen" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="localidadDestino" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cosecha" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitTransportista" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="detalle" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cantidadHoras" type="xsd:int">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="patenteVehiculo" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="pesoNetoCarga" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="kmARecorrer" type="xsd:unsignedInt">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="tarifaReferencia" type="tns:decimalType"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="fechaHoraConfirmacionDefinitiva" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitCorredor" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="remitenteComercialcomoProductor" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="ctcCodigo" type="xsd:string"/>
+                </xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayErroresType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="error" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosConsultarCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaSolicitud" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="estado" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="imprimeConstancia" type="xsd:boolean"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCosechasType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarCosechasRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCosechasResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarCosechasReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCosechasReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayCosechas" type="tns:arrayCosechasType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayCosechasType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="cosecha" type="tns:cosechaType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="cosechaType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigo" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="descripcion" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCosechasRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="consultarCTGExcelResponse" type="tns:consultarCTGExcelResponseType">
+			</xsd:element>
+			<xsd:element name="consultarCTGExcel" type="tns:consultarCTGExcelType">
+			</xsd:element>
+			<xsd:complexType name="consultarCTGExcelType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarCTGRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGExcelResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarCTGExcelReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarDetalleCTGReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="consultarDetalleCTGDatos" type="tns:consultarDetalleCTGDatosReturnType"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGExcelReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="archivo" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarEspeciesType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarEspeciesRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarEspeciesRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarEspeciesResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarEspeciesReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarEspeciesReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayEspecies" type="tns:arrayEspeciesType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayEspeciesType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="especie" type="tns:especieType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="especieType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigo" type="xsd:int">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="descripcion" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarProvinciasType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarProvinciasRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarProvinciasRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarProvinciasResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="consultarProvinciasResponse" type="tns:consultarProvinciasReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarProvinciasReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayProvincias" type="tns:arrayProvinciasType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayProvinciasType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="provincia" type="tns:provinciaType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="provinciaType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigo" type="xsd:byte">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="descripcion" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarLocalidadesPorProvinciaType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarLocalidadesPorProvinciaRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarLocalidadesPorProvinciaRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigoProvincia" type="xsd:byte"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarLocalidadesPorProvinciaResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarLocalidadesPorProvinciaReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarLocalidadesPorProvinciaReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayLocalidades" type="tns:arrayLocalidadesType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayLocalidadesType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="localidad" type="tns:localidadType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="localidadType">
+				<xsd:sequence>
+					<xsd:element name="codigo" type="xsd:int"/>
+					<xsd:element name="descripcion" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarEstablecimientosRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarEstablecimientosResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarEstablecimientosReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarEstablecimientosReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="arrayEstablecimientos" type="tns:arrayEstablecimientosType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayEstablecimientosType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="1" name="establecimiento" type="xsd:long"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="solicitarCTGInicialType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:solicitarCTGInicialRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="regresarAOrigenCTGRechazadoResponse" type="tns:operacionCTGResponseType">
+			</xsd:element>
+			<xsd:element name="regresarAOrigenCTGRechazado" type="tns:regresarAOrigenCTGRechazadoType">
+			</xsd:element>
+			<xsd:complexType name="regresarAOrigenCTGRechazadoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:regresarAOrigenCTGRechazadoRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="regresarAOrigenCTGRechazadoRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosRegresarAOrigenCTGRechazado" type="tns:datosRegresarAOrigenCTGRechazadoType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="solicitarCTGDatoPendienteType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:solicitarCTGDatoPendienteRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="solicitarCTGDatoPendienteRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosSolicitarCTGDatoPendiente" type="tns:datosSolicitarCTGDatoPendienteType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosSolicitarCTGDatoPendienteType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitTransportista" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cantHoras" type="xsd:int">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="patente" type="xsd:string">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="solicitarCTGDatoPendienteResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:solicitarCTGReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosSolicitarCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaEmision" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaVigenciaDesde" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaVigenciaHasta" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="tarifaReferencia" type="tns:decimalType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="solicitarCTGInicialRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosSolicitarCTGInicial" type="tns:datosSolicitarCTGInicialType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosSolicitarCTGInicialType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigoEspecie" type="xsd:int">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitCanjeador" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="remitenteComercialComoCanjeador" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitDestino" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitDestinatario" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigoLocalidadOrigen" type="xsd:int">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigoLocalidadDestino" type="xsd:int">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigoCosecha" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="pesoNeto" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitTransportista" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cantHoras" type="xsd:int"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="patente" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="kmARecorrer" type="xsd:unsignedInt"/>
+
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitCorredor" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="remitenteComercialcomoProductor" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="solicitarCTGInicialResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:solicitarCTGReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="solicitarCTGReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="observacion" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosSolicitarCTGResponse" type="tns:datosSolicitarCTGResponseType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="anularCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:anularCTGRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="anularCTGRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosAnularCTG" type="tns:datosCTGType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayControlType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="control" type="tns:controlType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosSolicitarCTGResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="datosSolicitarCTG" type="tns:datosSolicitarCTGType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="arrayControles" type="tns:arrayControlType">
+					</xsd:element>
+
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="controlType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="tipo" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="descripcion" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="confirmarArriboType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:confirmarArriboRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="confirmarArriboRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosConfirmarArribo" type="tns:datosConfirmarArriboType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosConfirmarArriboType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitTransportista" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitChofer" type="tns:cuitSimpleType"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cantKilosCartaPorte" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="0" name="consumoPropio" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="establecimiento" type="xsd:long"/>
+
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosOperacionCTGResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaHora" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigoOperacion" type="xsd:long"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="consultarEstablecimientos" type="tns:consultarEstablecimientosType">
+			</xsd:element>
+			<xsd:element name="consultarEstablecimientosResponse" type="tns:consultarEstablecimientosResponseType">
+			</xsd:element>
+			<xsd:complexType name="datosCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="operacionCTGResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:operacionCTGReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="operacionCTGReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="datosResponse" type="tns:datosOperacionCTGResponseType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGActivosPorPatenteType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarCTGActivosPorPatenteRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGActivosPorPatenteRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="patente" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGActivosPorPatenteResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarCTGActivosPorPatenteReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGActivosPorPatenteReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayConsultarCTGActivosPorPatenteResponse" type="tns:arrayConsultarCTGActivosPorPatenteResponseType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayConsultarCTGActivosPorPatenteResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="detalleConsultaCTGActivo" type="tns:detalleConsultaCTGActivoType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="detalleConsultaCTGActivoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="patente" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="pesoNeto" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaEmision" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaVencimiento" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="usuarioSolicitante" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="usuarioReal" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGRechazadosType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarCTGRechazadosRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGRechazadosRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGRechazadosResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarCTGRechazadosReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarCTGRechazadosReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayConsultarCTGRechazados" type="tns:arrayConsultarCTGRechazadosType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayConsultarCTGRechazadosType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="detalleConsultaCTGRechazado" type="tns:detalleConsultaCTGRechazadoType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="detalleConsultaCTGRechazadoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaRechazo" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="destino" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="destinatario" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="observaciones" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="rechazarCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:rechazarCTGRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="rechazarCTGRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosRechazarCTG" type="tns:datosRechazarCTGType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosRechazarCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="motivoRechazo" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="confirmarDefinitivoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:confirmarDefinitivoRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="confirmarDefinitivoRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosConfirmarDefinitivo" type="tns:datosConfirmarDefinitivoType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="cambiarDestinoDestinatarioCTGRechazado" type="tns:cambiarDestinoDestinatarioCTRRechazadoType">
+			</xsd:element>
+			<xsd:element name="cambiarDestinoDestinatarioCTGRechazadoResponse" type="tns:operacionCTGResponseType">
+			</xsd:element>
+			<xsd:complexType name="cambiarDestinoDestinatarioCTRRechazadoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:cambiarDestinoDestinatarioCTGRechazadoRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="cambiarDestinoDestinatarioCTGRechazadoRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosCambiarDestinoDestinatarioCTGRechazado" type="tns:datosCambiarDestinoDestinatarioCTGRechazadoType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosCambiarDestinoDestinatarioCTGRechazadoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigoLocalidadDestino" type="xsd:int">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitDestino" type="tns:cuitSimpleType"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitDestinatario" type="tns:cuitSimpleType"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="kmARecorrer" type="xsd:unsignedInt"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="desviarCTGAOtroEstablecimientoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:desviarCTGAOtroEstablecimientoRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="desviarCTGAOtroEstablecimientoRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosDesviarCTG" type="tns:datosDesviarCTGType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="establecimiento" type="xsd:long"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="desviarCTGAOtroDestinoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:desviarCTGAOtroDestinoRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="desviarCTGAOtroDestinoRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosDesviarCTG" type="tns:datosDesviarCTGType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitDestino" type="tns:cuitSimpleType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarConstanciaCTGPDFType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:consultarConstanciaCTGPDFRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarConstanciaCTGPDFResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:consultarConstanciaCTGPDFReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarConstanciaCTGPDFRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="consultarConstanciaCTGPDFReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="archivo" type="xsd:string"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="datosDesviarCTGType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="codigoLocalidadDestino" type="xsd:int"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="kmARecorrer" type="xsd:unsignedInt"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="decimalType">
+				<xsd:restriction base="xsd:decimal">
+					<xsd:minExclusive value="0"/>
+					<xsd:maxInclusive value="9999999999999.99"/>
+					<xsd:fractionDigits value="2"/>
+				</xsd:restriction>
+			</xsd:simpleType>		
+			<xsd:complexType name="datosConfirmarDefinitivoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="especie" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="codigoCosecha" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="pesoNeto" type="xsd:long"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="datosRegresarAOrigenCTGRechazadoType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long"/>
+					<xsd:element maxOccurs="1" minOccurs="1" name="kmARecorrer" type="xsd:unsignedInt"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="confirmarDefinitivoResponseType">
+				<xsd:sequence>
+					<xsd:element name="response" type="tns:confirmarDefinitivoReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="confirmarDefinitivoReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="detalle" type="xsd:string">
+					</xsd:element>
+                    <xsd:element maxOccurs="1" minOccurs="0" name="datosResponse" type="tns:datosConfirmarDefinitivoResponseType"/>
+                    <xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="CTGsPendientesResolucion" type="tns:CTGsPendientesResolucionType">
+			</xsd:element>
+			<xsd:element name="CTGsPendientesResolucionResponse" type="tns:CTGsPendientesResolucionResponseType">
+			</xsd:element>
+			<xsd:complexType name="CTGsPendientesResolucionType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:ctgsPendientesResolucionRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="ctgsPendientesResolucionRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="CTGsPendientesResolucionResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:CTGsPendientesResolucionReturnType"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="CTGsPendientesResolucionReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayCTGsRechazadosAResolver" type="tns:arrayCTGsRechazadosAResolverType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayCTGsOtorgadosAResolver" type="tns:arrayCTGsOtorgadosAResolverType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayCTGsConfirmadosAResolver" type="tns:arrayCTGsConfirmadosAResolverType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayCTGsRechazadosAResolverType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="CTGRechazadosAResolver" type="tns:CTGRechazadosAResolverType"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="CTGRechazadosAResolverType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaRechazo" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="destino" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="destinatario" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="observaciones" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="arrayCTGsOtorgadosAResolverType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="CTGOtorgadosAResolver" type="tns:CTGOtorgadosAResolverType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="arrayCTGsConfirmadosAResolverType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="CTGConfirmadosAResolver" type="tns:CTGConfirmadosAResolverType"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="CTGOtorgadosAResolverType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaEmision" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="destino" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="CTGConfirmadosAResolverType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaConfirmacionArribo" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType> 
+			<xsd:complexType name="datosConfirmarDefinitivoResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="fechaHora" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="modificarRemitenteComercial" type="tns:modificarRemitenteComercialType">
+			</xsd:element>
+			<xsd:element name="modificarRemitenteComercialResponse" type="tns:modificarRemitenteComercialResponseType">
+			</xsd:element>
+			<xsd:complexType name="modificarRemitenteComercialType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="request" type="tns:modificarRemitenteComercialRequestType"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="modificarRemitenteComercialRequestType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="auth" type="tns:authType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="datosModificarRemitenteComercial" type="tns:datosModificarRemitenteComercialType">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="datosModificarRemitenteComercialType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitRemitenteComercialOIntermediario" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="remitenteComercialOIntermediarioComoCanjeador" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="correspondeRemitenteComercialOIntermediarioProductor" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="modificarRemitenteComercialResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="response" type="tns:modificarRemitenteComercialReturnType">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>    
+			<xsd:complexType name="modificarRemitenteComercialReturnType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="0" name="datosResponse" type="tns:datosModificarRemitenteComercialResponseType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="arrayErrores" type="tns:arrayErroresType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+   			<xsd:complexType name="datosModificarRemitenteComercialResponseType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cartaPorte" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="ctg" type="xsd:long">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="cuitRemitenteComercialAnterior" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="0" name="nombreRemitenteComercialAnterior" type="xsd:string">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="cuitRemitenteComercialNuevo" type="tns:cuitSimpleType">
+					</xsd:element>
+					<xsd:element maxOccurs="1" minOccurs="1" name="nombreRemitenteComercialNuevo" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="solicitarCTGDatoPendienteRequest">
+    <wsdl:part name="parameters" element="tns:solicitarCTGDatoPendiente">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cambiarDestinoDestinatarioCTGRechazadoRequest">
+    <wsdl:part name="parameters" element="tns:cambiarDestinoDestinatarioCTGRechazado">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarConstanciaCTGPDFResponse">
+    <wsdl:part name="parameters" element="tns:consultarConstanciaCTGPDFResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="regresarAOrigenCTGRechazadoRequest">
+    <wsdl:part name="parameters" element="tns:regresarAOrigenCTGRechazado">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="desviarCTGAOtroDestinoResponse">
+    <wsdl:part name="parameters" element="tns:desviarCTGAOtroDestinoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="regresarAOrigenCTGRechazadoResponse">
+    <wsdl:part name="parameters" element="tns:regresarAOrigenCTGRechazadoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dummyResponse">
+    <wsdl:part name="parameters" element="tns:dummyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCosechasRequest">
+    <wsdl:part name="parameters" element="tns:consultarCosechas">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarConstanciaCTGPDFRequest">
+    <wsdl:part name="parameters" element="tns:consultarConstanciaCTGPDF">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarLocalidadesPorProvinciaResponse">
+    <wsdl:part name="parameters" element="tns:consultarLocalidadesPorProvinciaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarDetalleCTGResponse">
+    <wsdl:part name="parameters" element="tns:consultarDetalleCTGResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCTGActivosPorPatenteRequest">
+    <wsdl:part name="parameters" element="tns:consultarCTGActivosPorPatente">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProvinciasRequest">
+    <wsdl:part name="parameters" element="tns:consultarProvincias">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmarDefinitivoResponse">
+    <wsdl:part name="parameters" element="tns:confirmarDefinitivoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarEspeciesResponse">
+    <wsdl:part name="parameters" element="tns:consultarEspeciesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechazarCTGResponse">
+    <wsdl:part name="parameters" element="tns:rechazarCTGResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarLocalidadesPorProvinciaRequest">
+    <wsdl:part name="parameters" element="tns:consultarLocalidadesPorProvincia">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCTGExcelResponse">
+    <wsdl:part name="parameters" element="tns:consultarCTGExcelResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarEstablecimientosResponse">
+    <wsdl:part name="parameters" element="tns:consultarEstablecimientosResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="anularCTGResponse">
+    <wsdl:part name="parameters" element="tns:anularCTGResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CTGsPendientesResolucionRequest">
+    <wsdl:part name="parameters" element="tns:CTGsPendientesResolucion">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificarRemitenteComercialRequest">
+    <wsdl:part name="parameters" element="tns:modificarRemitenteComercial">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProvinciasResponse">
+    <wsdl:part name="parameters" element="tns:consultarProvinciasResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmarArriboRequest">
+    <wsdl:part name="parameters" element="tns:confirmarArribo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="solicitarCTGInicialRequest">
+    <wsdl:part name="parameters" element="tns:solicitarCTGInicial">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="desviarCTGAOtroDestinoRequest">
+    <wsdl:part name="parameters" element="tns:desviarCTGAOtroDestino">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CTGsPendientesResolucionResponse">
+    <wsdl:part name="parameters" element="tns:CTGsPendientesResolucionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificarRemitenteComercialResponse">
+    <wsdl:part name="parameters" element="tns:modificarRemitenteComercialResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarEspeciesRequest">
+    <wsdl:part name="parameters" element="tns:consultarEspecies">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCosechasResponse">
+    <wsdl:part name="parameters" element="tns:consultarCosechasResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="solicitarCTGDatoPendienteResponse">
+    <wsdl:part name="parameters" element="tns:solicitarCTGDatoPendienteResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="desviarCTGAOtroEstablecimientoResponse">
+    <wsdl:part name="parameters" element="tns:desviarCTGAOtroEstablecimientoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCTGActivosPorPatenteResponse">
+    <wsdl:part name="parameters" element="tns:consultarCTGActivosPorPatenteResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCTGRechazadosResponse">
+    <wsdl:part name="parameters" element="tns:consultarCTGRechazadosResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="desviarCTGAOtroEstablecimientoRequest">
+    <wsdl:part name="parameters" element="tns:desviarCTGAOtroEstablecimiento">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarDetalleCTGRequest">
+    <wsdl:part name="parameters" element="tns:consultarDetalleCTG">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="anularCTGRequest">
+    <wsdl:part name="parameters" element="tns:anularCTG">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rechazarCTGRequest">
+    <wsdl:part name="parameters" element="tns:rechazarCTG">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarEstablecimientosRequest">
+    <wsdl:part name="parameters" element="tns:consultarEstablecimientos">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCTGRechazadosRequest">
+    <wsdl:part name="parameters" element="tns:consultarCTGRechazados">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="solicitarCTGInicialResponse">
+    <wsdl:part name="parameters" element="tns:solicitarCTGInicialResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cambiarDestinoDestinatarioCTGRechazadoResponse">
+    <wsdl:part name="parameters" element="tns:cambiarDestinoDestinatarioCTGRechazadoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCTGExcelRequest">
+    <wsdl:part name="parameters" element="tns:consultarCTGExcel">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCTGRequest">
+    <wsdl:part name="parameters" element="tns:consultarCTG">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCTGResponse">
+    <wsdl:part name="parameters" element="tns:consultarCTGResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmarDefinitivoRequest">
+    <wsdl:part name="parameters" element="tns:confirmarDefinitivo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dummyRequest">
+  </wsdl:message>
+  <wsdl:message name="confirmarArriboResponse">
+    <wsdl:part name="parameters" element="tns:confirmarArriboResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CTGServicePortType">
+    <wsdl:operation name="dummy">
+      <wsdl:input message="tns:dummyRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:dummyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCTGInicial">
+      <wsdl:input message="tns:solicitarCTGInicialRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:solicitarCTGInicialResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCTGDatoPendiente">
+      <wsdl:input message="tns:solicitarCTGDatoPendienteRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:solicitarCTGDatoPendienteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="anularCTG">
+      <wsdl:input message="tns:anularCTGRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:anularCTGResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarArribo">
+      <wsdl:input message="tns:confirmarArriboRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:confirmarArriboResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desviarCTGAOtroEstablecimiento">
+      <wsdl:input message="tns:desviarCTGAOtroEstablecimientoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:desviarCTGAOtroEstablecimientoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desviarCTGAOtroDestino">
+      <wsdl:input message="tns:desviarCTGAOtroDestinoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:desviarCTGAOtroDestinoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechazarCTG">
+      <wsdl:input message="tns:rechazarCTGRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:rechazarCTGResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarDefinitivo">
+      <wsdl:input message="tns:confirmarDefinitivoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:confirmarDefinitivoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCTG">
+      <wsdl:input message="tns:consultarCTGRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarCTGResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCTGRechazados">
+      <wsdl:input message="tns:consultarCTGRechazadosRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarCTGRechazadosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCTGActivosPorPatente">
+      <wsdl:input message="tns:consultarCTGActivosPorPatenteRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarCTGActivosPorPatenteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarConstanciaCTGPDF">
+      <wsdl:input message="tns:consultarConstanciaCTGPDFRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarConstanciaCTGPDFResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstablecimientos">
+      <wsdl:input message="tns:consultarEstablecimientosRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarEstablecimientosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCosechas">
+      <wsdl:input message="tns:consultarCosechasRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarCosechasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProvincias">
+      <wsdl:input message="tns:consultarProvinciasRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarProvinciasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLocalidadesPorProvincia">
+      <wsdl:input message="tns:consultarLocalidadesPorProvinciaRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarLocalidadesPorProvinciaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEspecies">
+      <wsdl:input message="tns:consultarEspeciesRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarEspeciesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalleCTG">
+      <wsdl:input message="tns:consultarDetalleCTGRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarDetalleCTGResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCTGExcel">
+      <wsdl:input message="tns:consultarCTGExcelRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:consultarCTGExcelResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="regresarAOrigenCTGRechazado">
+      <wsdl:input message="tns:regresarAOrigenCTGRechazadoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:regresarAOrigenCTGRechazadoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiarDestinoDestinatarioCTGRechazado">
+      <wsdl:input message="tns:cambiarDestinoDestinatarioCTGRechazadoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:cambiarDestinoDestinatarioCTGRechazadoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CTGsPendientesResolucion">
+      <wsdl:input message="tns:CTGsPendientesResolucionRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:CTGsPendientesResolucionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarRemitenteComercial">
+      <wsdl:input message="tns:modificarRemitenteComercialRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:modificarRemitenteComercialResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CTGServiceBinding" type="tns:CTGServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="dummy">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/dummy"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCTGInicial">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/solicitarCTGInicial"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCTGDatoPendiente">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/solicitarCTGDatoPendiente"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="anularCTG">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/anularCTG"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarArribo">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/confirmarArribo"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechazarCTG">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/rechazarCTG"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarDefinitivo">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/confirmarDefinitivo"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCTG">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarCTG"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarDetalleCTG">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarDetalleCTG"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCTGRechazados">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarCTGRechazados"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCTGActivosPorPatente">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarCTGActivosPorPatente"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCosechas">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarCosechas"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProvincias">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarProvincias"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarLocalidadesPorProvincia">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarLocalidadesPorProvincia"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEspecies">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarEspecies"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCTGExcel">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarCTGExcel"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEstablecimientos">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarEstablecimientos"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="regresarAOrigenCTGRechazado">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/regresarAOrigenCTGRechazado"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cambiarDestinoDestinatarioCTGRechazado">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/cambiarDestinoDestinatarioCTGRechazado"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desviarCTGAOtroEstablecimiento">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/desviarCTGAOtroEstablecimiento"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="desviarCTGAOtroDestino">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/desviarCTGAOtroDestino"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarConstanciaCTGPDF">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/consultarConstanciaCTGPDF"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CTGsPendientesResolucion">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/CTGsPendientesResolucion"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarRemitenteComercial">
+      <soap:operation soapAction="http://impl.service.wsctg.afip.gov.ar/CTGService_v3.0/modificarRemitenteComercial"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CTGService_v3.0">
+    <wsdl:port name="CTGServiceHttpSoap20Endpoint" binding="tns:CTGServiceBinding">
+      <soap:address location="https://fwshomo.afip.gov.ar/wsctg/services/CTGService_v3.0"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
